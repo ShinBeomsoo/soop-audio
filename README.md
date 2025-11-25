@@ -26,9 +26,6 @@
   <ol>
     <li>
       <a href="#about-the-project">프로젝트 소개</a>
-      <ul>
-        <li><a href="#built-with">기술 스택</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">시작하기</a>
@@ -57,15 +54,6 @@ soop-audio는 soop VOD 링크에서 오디오만 추출하여 브라우저에서
 * 📦 **경량화**: 최소한의 의존성으로 가볍고 빠름
 * 🔧 **TypeScript 지원**: 완전한 타입 안정성 제공
 * 🌐 **브라우저 호환**: 최신 브라우저와 구형 브라우저 모두 지원
-
-<p align="right">(<a href="#readme-top">맨 위로</a>)</p>
-
-### 기술 스택
-
-이 섹션에는 프로젝트를 부트스트랩하는 데 사용된 주요 프레임워크/라이브러리를 나열합니다.
-
-* [![TypeScript][TypeScript]][TypeScript-url]
-* [![Node.js][Node.js]][Node.js-url]
 
 <p align="right">(<a href="#readme-top">맨 위로</a>)</p>
 
@@ -196,8 +184,6 @@ if (element) {
 }
 ```
 
-_더 많은 예시는 [문서](https://github.com/your_username/soop-audio)를 참고하세요._
-
 <p align="right">(<a href="#readme-top">맨 위로</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -212,14 +198,6 @@ _더 많은 예시는 [문서](https://github.com/your_username/soop-audio)를 �
 3. 변경사항 커밋 (`git commit -m 'Add some AmazingFeature'`)
 4. 브랜치에 푸시 (`git push origin feature/AmazingFeature`)
 5. Pull Request 열기
-
-### 주요 기여자:
-
-<a href="https://github.com/your_username/soop-audio/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=your_username/soop-audio" alt="contrib.rocks image" />
-</a>
-
-<p align="right">(<a href="#readme-top">맨 위로</a>)</p>
 
 <!-- LICENSE -->
 ## 라이선스
