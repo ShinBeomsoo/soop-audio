@@ -1,0 +1,39 @@
+{
+  "name": "soop-audio",
+  "version": "0.1.0",
+  "description": "Extract and play audio-only from soop VOD links",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "soop-audio": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "soop",
+    "vod",
+    "audio",
+    "m3u8",
+    "hls",
+    "streaming"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "hls-parser": "^0.10.7",
+    "commander": "^11.0.0",
+    "puppeteer": "^21.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.0"
+  }
+}
+
