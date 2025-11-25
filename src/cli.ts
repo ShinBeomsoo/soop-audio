@@ -3,7 +3,7 @@
 import { Command } from 'commander';
 import { SoopAudio } from './index';
 import { existsSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
 
 const program = new Command();
 
@@ -14,7 +14,7 @@ program
 
 program
   .argument('<url>', 'soop VOD URL 또는 m3u8 URL')
-  .option('-o, --output <path>', '세그먼트 다운로드 경로 (선택사항)')
+  .option('-o, --output <path>', '출력 오디오 파일 경로 (예: output.mp3)')
   .option('-q, --quality <quality>', '품질 선택 (low, medium, high)', 'medium')
   .action(async (url: string, options) => {
     try {
@@ -22,9 +22,9 @@ program
       
       // 출력 경로가 지정된 경우 디렉토리 생성
       if (options.output) {
-        if (!existsSync(options.output)) {
-          mkdirSync(options.output, { recursive: true });
-          console.log(`📁 디렉토리 생성: ${options.output}\n`);
+        const outputDir = dirname(options.output);
+        if (outputDir !== '.' && !existsSync(outputDir)) {
+          mkdirSync(outputDir, { recursive: true });
         }
       }
 

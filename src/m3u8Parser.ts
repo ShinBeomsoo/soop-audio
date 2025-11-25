@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { parse } from 'hls-parser';
 import { M3U8Info, M3U8Variant } from './types';
 
@@ -35,13 +34,18 @@ export class M3U8AudioParser {
    */
   async parseM3U8(m3u8Url: string): Promise<M3U8Info> {
     try {
-      const response = await axios.get(m3u8Url, {
+      const response = await fetch(m3u8Url, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
       });
 
-      const manifest = parse(response.data) as MasterPlaylist | MediaPlaylist;
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const manifestText = await response.text();
+      const manifest = parse(manifestText) as MasterPlaylist | MediaPlaylist;
 
       // Master Playlist인 경우
       if (manifest.isMasterPlaylist) {
